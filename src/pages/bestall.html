@@ -1,0 +1,169 @@
+<!--meta
+{
+  "title": "Beställ tårta i Malmö: offertförfrågan | Fiona's Bakery",
+  "description": "Skicka en offertförfrågan på tårta, cupcakes eller bakverk till bröllop, kalas, dop, möhippa eller företag i Malmö med omnejd. Jag svarar med förslag och pris.",
+  "path": "/bestall/",
+  "crumb": "Begär offert",
+  "og": "og-hem",
+  "priority": "0.9",
+  "body_class": "page-bestall"
+}
+-->
+    <section class="page-hero" aria-labelledby="bestall-title" style="padding-bottom:2rem">
+      <div class="container">
+        <p class="eyebrow reveal">Offertförfrågan</p>
+        <h1 id="bestall-title" class="reveal reveal-delay-1">Beställ tårta: <em>berätta om festen</em></h1>
+        <p class="lead reveal reveal-delay-2">Fyll i det du vet, resten pratar vi om. Jag svarar med förslag på design, smaker och pris. Förfrågan är inte bindande.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:2rem">
+      <div class="container order-layout">
+        <div>
+          <!-- Set data-endpoint to a Formspree/Web3Forms URL to send directly. Empty = opens the visitor's mail app. -->
+          <form id="order-form" class="form" action="mailto:kontakt@fionasbakery.se" method="post" novalidate data-endpoint="" data-access-key="">
+            <p id="form-status" class="notice form-status" role="alert" hidden></p>
+
+            <fieldset class="group">
+              <legend><span class="n">1.</span> Festen</legend>
+              <div class="field">
+                <label class="label" for="f-tillfalle">Tillfälle <span class="req" aria-hidden="true">*</span></label>
+                <select id="f-tillfalle" name="tillfalle" required aria-describedby="f-tillfalle-error">
+                  <option value="">Välj tillfälle</option>
+                  <option value="brollop">Bröllop</option>
+                  <option value="fodelsedag">Födelsedag / barnkalas</option>
+                  <option value="dop">Dop / babyshower</option>
+                  <option value="mohippa">Möhippa / fest</option>
+                  <option value="foretag">Företag / event</option>
+                  <option value="annat">Annat</option>
+                </select>
+                <p class="error" id="f-tillfalle-error" hidden><x-icon name="warning-circle"><span></span></p>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label class="label" for="f-datum">Datum för festen <span class="req" aria-hidden="true">*</span></label>
+                  <input id="f-datum" name="datum" type="date" required aria-describedby="f-datum-error datum-notice">
+                  <p class="error" id="f-datum-error" hidden><x-icon name="warning-circle"><span></span></p>
+                </div>
+                <div class="field">
+                  <label class="label" for="f-antal">Antal gäster / bitar <span class="req" aria-hidden="true">*</span></label>
+                  <input id="f-antal" name="antal" type="number" inputmode="numeric" min="1" step="1" required aria-describedby="f-antal-hint f-antal-error">
+                  <p class="hint" id="f-antal-hint">Räkna med en bit per gäst.</p>
+                  <p class="error" id="f-antal-error" hidden><x-icon name="warning-circle"><span></span></p>
+                </div>
+              </div>
+              <p class="notice" id="datum-notice" aria-live="polite" hidden><x-icon name="info"><span></span></p>
+            </fieldset>
+
+            <fieldset class="group" aria-describedby="f-hamtning-error">
+              <legend><span class="n">2.</span> Hämtning eller leverans <span class="req" aria-hidden="true">*</span></legend>
+              <div class="choice-row">
+                <label class="choice"><input type="radio" name="hamtning" value="Hämtning" required> Hämtning i Arlöv</label>
+                <label class="choice"><input type="radio" name="hamtning" value="Leverans" required> Leverans</label>
+              </div>
+              <p class="error" id="f-hamtning-error" hidden><x-icon name="warning-circle"><span></span></p>
+              <div class="field" id="leveransadress-field" hidden>
+                <label class="label" for="f-adress">Leveransadress / ort <span class="req" aria-hidden="true">*</span></label>
+                <input id="f-adress" name="leveransadress" type="text" autocomplete="street-address" aria-describedby="f-adress-hint f-adress-error">
+                <p class="hint" id="f-adress-hint">Malmö med omnejd. Längre bort mot avgift enligt överenskommelse.</p>
+                <p class="error" id="f-adress-error" hidden><x-icon name="warning-circle"><span></span></p>
+              </div>
+            </fieldset>
+
+            <fieldset class="group">
+              <legend><span class="n">3.</span> Tårtan</legend>
+              <div class="field">
+                <label class="label" for="f-smaker">Önskade smaker <span class="opt">(valfritt)</span></label>
+                <input id="f-smaker" name="smaker" type="text" aria-describedby="f-smaker-hint">
+                <p class="hint" id="f-smaker-hint">Till exempel vaniljbotten med hallon och vit choklad. <a href="/priser/#smaker">Se alla smaker</a>.</p>
+              </div>
+              <div class="field">
+                <label class="label" for="f-inspiration">Inspiration <span class="opt">(valfritt)</span></label>
+                <input id="f-inspiration" name="inspiration" type="url" inputmode="url" aria-describedby="f-inspiration-hint f-inspiration-error">
+                <p class="hint" id="f-inspiration-hint">Länk till en bild på Instagram eller Pinterest.</p>
+                <p class="error" id="f-inspiration-error" hidden><x-icon name="warning-circle"><span></span></p>
+              </div>
+              <div class="field">
+                <label class="label" for="f-meddelande">Meddelande <span class="opt">(valfritt)</span></label>
+                <textarea id="f-meddelande" name="meddelande" rows="5" aria-describedby="f-meddelande-hint"></textarea>
+                <p class="hint" id="f-meddelande-hint">Tema, färger, namn på tårtan, allergier eller annat jag bör veta.</p>
+              </div>
+            </fieldset>
+
+            <fieldset class="group">
+              <legend><span class="n">4.</span> Dina uppgifter</legend>
+              <div class="field">
+                <label class="label" for="f-namn">Namn <span class="req" aria-hidden="true">*</span></label>
+                <input id="f-namn" name="namn" type="text" autocomplete="name" required aria-describedby="f-namn-error">
+                <p class="error" id="f-namn-error" hidden><x-icon name="warning-circle"><span></span></p>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label class="label" for="f-telefon">Telefon <span class="req" aria-hidden="true">*</span></label>
+                  <input id="f-telefon" name="telefon" type="tel" autocomplete="tel" pattern="[0-9+()\s-]{6,}" required aria-describedby="f-telefon-error">
+                  <p class="error" id="f-telefon-error" hidden><x-icon name="warning-circle"><span></span></p>
+                </div>
+                <div class="field">
+                  <label class="label" for="f-epost">E-post <span class="req" aria-hidden="true">*</span></label>
+                  <input id="f-epost" name="epost" type="email" autocomplete="email" required aria-describedby="f-epost-error">
+                  <p class="error" id="f-epost-error" hidden><x-icon name="warning-circle"><span></span></p>
+                </div>
+              </div>
+              <div class="field">
+                <label class="consent"><input id="f-samtycke" name="samtycke" type="checkbox" value="ja" required aria-describedby="f-samtycke-error"> <span>Jag godkänner att Fiona's Bakery använder mina uppgifter för att svara på förfrågan. Läs mer i <a href="/integritet/">integritetspolicyn</a>. <span class="req" aria-hidden="true">*</span></span></label>
+                <p class="error" id="f-samtycke-error" hidden><x-icon name="warning-circle"><span></span></p>
+              </div>
+              <div class="hp" aria-hidden="true">
+                <label for="f-hp">Lämna tomt</label>
+                <input id="f-hp" class="hp-input" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+              </div>
+            </fieldset>
+
+            <p class="small muted" style="margin:0">Fält markerade med <span class="req">*</span> behöver fyllas i.</p>
+            <div>
+              <button class="btn btn-primary" type="submit"><span>Skicka förfrågan</span> <x-icon name="paper-plane-tilt"></button>
+            </div>
+          </form>
+
+          <div id="form-success" class="success" tabindex="-1" hidden>
+            <x-icon name="check-circle" class="icon-lg">
+            <div data-mode="sent" hidden>
+              <h2>Tack, din förfrågan är skickad</h2>
+              <p>Jag läser den och återkommer med förslag och pris, oftast via e-post. Har du bråttom går det bra att ringa på <a href="tel:+46738740378">073-874 03 78</a>.</p>
+            </div>
+            <div data-mode="mail" hidden>
+              <h2>Nästan klart, skicka mejlet</h2>
+              <p>Ditt mejlprogram öppnas med förfrågan ifylld till <a href="mailto:kontakt@fionasbakery.se">kontakt@fionasbakery.se</a>. Tryck på skicka där, så återkommer jag med förslag och pris.</p>
+              <p class="muted">Öppnades inget mejl? Kopiera texten nedan och skicka den till kontakt@fionasbakery.se, eller ring <a href="tel:+46738740378">073-874 03 78</a>.</p>
+            </div>
+            <details>
+              <summary>Visa din förfrågan</summary>
+              <pre></pre>
+            </details>
+            <div class="actions">
+              <a class="text-link" href="/">Tillbaka till startsidan</a>
+            </div>
+          </div>
+        </div>
+
+        <aside class="order-aside" aria-label="Bra att veta">
+          <div class="aside-card">
+            <h2>Bra att veta</h2>
+            <ul>
+              <li><x-icon name="calendar-blank"> <span>Dekorerade tårtor 1-2 veckor innan, med sockerblommor ungefär en månad.</span></li>
+              <li><x-icon name="cake"> <span>Tårta 60 kr per bit. Dekor efter antal och avancemang. <a href="/priser/">Alla priser</a></span></li>
+              <li><x-icon name="truck"> <span>Leverans i Malmö med omnejd, hämtning i Arlöv.</span></li>
+              <li><x-icon name="briefcase"> <span>Godkänd för F-skatt. Betalning med företags-Swish.</span></li>
+            </ul>
+          </div>
+          <div class="aside-card">
+            <h2>Hellre prata?</h2>
+            <ul>
+              <li><x-icon name="phone"> <a href="tel:+46738740378">073-874 03 78</a></li>
+              <li><x-icon name="envelope-simple"> <a href="mailto:kontakt@fionasbakery.se">kontakt@fionasbakery.se</a></li>
+              <li><x-icon name="instagram-logo"> <a href="https://www.instagram.com/fionasbakery/" rel="noopener">@fionasbakery</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>

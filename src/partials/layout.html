@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  <meta name="robots" content="{{robots}}">
+  <link rel="canonical" href="{{canonical}}">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#FCFAF7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1C171D" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/cormorant-garamond-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="sv_SE">
+  <meta property="og:site_name" content="Fiona's Bakery">
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:url" content="{{canonical}}">
+  <meta property="og:image" content="{{og_image}}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{{og_alt}}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{title}}">
+  <meta name="twitter:description" content="{{description}}">
+  <meta name="twitter:image" content="{{og_image}}">
+  <meta name="twitter:image:alt" content="{{og_alt}}">
+  {{jsonld}}
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body class="{{body_class}}">
+  {{symbols}}
+  <a class="skip-link" href="#main">Hoppa till innehållet</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <svg class="brand-mark" viewBox="0 0 100 120" aria-hidden="true"><use href="#logo-mark"/></svg>
+        <svg class="brand-word" viewBox="0 0 359 72" role="img" aria-label="Fiona's Bakery, till startsidan"><use href="#logo-word"/></svg>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <x-icon name="list" class="nav-toggle-open"><x-icon name="x" class="nav-toggle-close">
+        <span>Meny</span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Huvudmeny">
+        <ul>
+          {{nav}}
+        </ul>
+        <a class="btn btn-primary btn-small" href="/bestall/">Begär offert</a>
+      </nav>
+    </div>
+  </header>
+  {{breadcrumbs}}
+  <main id="main" tabindex="-1">
+{{content}}
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <svg class="footer-mark" viewBox="0 0 100 120" aria-hidden="true"><use href="#logo-mark"/></svg>
+        <p class="footer-tagline">Tårtor och sockerblommor, gjorda för hand i Arlöv. Till fester i Malmö med omnejd.</p>
+        <a class="btn btn-primary" href="/bestall/">Begär offert</a>
+      </div>
+      <div>
+        <h2 class="footer-heading">Kontakt</h2>
+        <ul class="footer-list">
+          <li><a href="tel:+46738740378"><x-icon name="phone"> 073-874 03 78</a></li>
+          <li><a href="mailto:kontakt@fionasbakery.se"><x-icon name="envelope-simple"> kontakt@fionasbakery.se</a></li>
+          <li><a href="https://www.instagram.com/fionasbakery/" rel="noopener"><x-icon name="instagram-logo"> @fionasbakery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="footer-heading">Hämtning</h2>
+        <address class="footer-list">
+          <p><x-icon name="map-pin"> Trossgatan 25<br>232 36 Arlöv</p>
+          <p><x-icon name="clock"> Enligt överenskommelse. Ingen butik, hämtning bokas i förväg.</p>
+        </address>
+      </div>
+      <div>
+        <h2 class="footer-heading">Sidor</h2>
+        <ul class="footer-list footer-nav">
+          {{nav}}
+          <li><a href="/bestall/">Begär offert</a></li>
+          <li><a href="/integritet/">Integritetspolicy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>Godkänd för F-skatt. Betalning med företags-Swish.</p>
+      <p>© {{year}} Fiona's Bakery, fionasbakery.se</p>
+    </div>
+  </footer>
+</body>
+</html>
