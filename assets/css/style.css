@@ -49,28 +49,7 @@
   --section: clamp(4.5rem, 10vw, 9rem);
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
   --reveal-ms: 560ms;
-  color-scheme: light dark;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #1c171d;
-    --paper: #241d25;
-    --ink: #f3e9eb;
-    --ink-soft: #b7a9b5;
-    --rose: #c99aa3;
-    --rose-ink: #e3a9b3;
-    --on-rose: #1c171d;
-    --blush: #2a1f27;
-    --blush-deep: #34262f;
-    --sage: #a9b89c;
-    --sage-tint: #1f231e;
-    --line: rgb(243 233 235 / 0.16);
-    --line-strong: rgb(243 233 235 / 0.32);
-    --focus: #e3a9b3;
-    --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 16px 40px -16px rgb(0 0 0 / 0.6);
-  }
-  img { filter: brightness(0.94); }
+  color-scheme: light;
 }
 
 /* ---------- Base ---------- */
@@ -544,7 +523,6 @@ input[type="text"], input[type="email"], input[type="tel"], input[type="url"], i
   background: var(--bg); border: 1px solid var(--line-strong); border-radius: var(--radius-sm);
   transition: border-color 0.2s, box-shadow 0.2s;
 }
-@media (prefers-color-scheme: dark) { input, select, textarea { background: var(--paper) !important; } }
 textarea { min-height: 9rem; resize: vertical; line-height: 1.55; }
 select {
   appearance: none; padding-right: 2.5rem; cursor: pointer;
@@ -557,9 +535,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
   outline: 2px solid var(--focus); outline-offset: 1px; border-color: var(--focus);
 }
 [aria-invalid="true"] { border-color: #b3261e !important; }
-@media (prefers-color-scheme: dark) { [aria-invalid="true"] { border-color: #f2b8b5 !important; } }
 .error { display: flex; gap: 0.45rem; align-items: flex-start; color: #a1231b; font-size: 0.9rem; font-weight: 500; margin: 0; }
-@media (prefers-color-scheme: dark) { .error { color: #f2b8b5; } }
 .error[hidden] { display: none; }
 .notice {
   display: flex; gap: 0.6rem; align-items: flex-start;
